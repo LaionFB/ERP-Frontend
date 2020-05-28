@@ -14,11 +14,11 @@ import { CustomerServiceDialogComponent } from './dialogs/customer-service/custo
 })
 
 export class SalesComponent implements OnInit{
-  private saleRequests = [];
-  private quotations = [];
-  private customers = [];
-  private customerServices = [];
-  private products = [];
+  public saleRequests = [];
+  public quotations = [];
+  public customers = [];
+  public customerServices = [];
+  public products = [];
 
   constructor(private provider: SalesProvider, public dialog: MatDialog){}
 

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private routes = [
+  public routes = [
     { href: '/delivery', icon: 'local_shipping', text: 'Logística' },
     { href: '/sales', icon: 'trending_up', text: 'Vendas' },
     { href: '/inventory', icon: 'all_inbox', text: 'Estoque' },

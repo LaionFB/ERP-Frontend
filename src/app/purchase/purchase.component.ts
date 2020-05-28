@@ -14,11 +14,11 @@ import { ProviderDialogComponent } from './dialogs/provider/provider.component';
 })
 
 export class PurchaseComponent implements OnInit {
-  private purchaseOrders = [];
-  private quotations = [];
-  private purchases = [];
-  private providers = [];
-  private products = [];
+  public purchaseOrders = [];
+  public quotations = [];
+  public purchases = [];
+  public providers = [];
+  public products = [];
 
   constructor(private provider: PurchaseProvider, public dialog: MatDialog){}
   

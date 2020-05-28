@@ -12,9 +12,9 @@ import { ProductDialogComponent } from './dialogs/product/product.component';
 })
 
 export class InventoryComponent implements OnInit {
-  private saleOrders = [];
-  private products = [];
-  private purchaseOrders = [];
+  public saleOrders = [];
+  public products = [];
+  public purchaseOrders = [];
 
   constructor(private provider: InventoryProvider, public dialog: MatDialog){}
 

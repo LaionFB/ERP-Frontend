@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-  private currentRoute = 'Home';
-  private routes = [
+  public currentRoute = 'Home';
+  public routes = [
     { href: '/home', icon: 'home', text: 'Home' },
     { href: '/delivery', icon: 'local_shipping', text: 'Logística' },
     { href: '/sales', icon: 'trending_up', text: 'Vendas' },

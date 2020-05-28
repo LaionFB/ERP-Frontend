@@ -6,6 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PurchaseProvider {
   constructor(private http: HttpClient){
+    http.get('http://localhost:3000/hello-world')
+    .toPromise()
+    .then(x => console.log('result', x))
+    .catch(e => console.error(e))
   }
 
   getPurchaseOrders(){

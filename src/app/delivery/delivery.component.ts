@@ -12,9 +12,9 @@ import { ProductDialogComponent } from './dialogs/product/product.component';
 })
 
 export class DeliveryComponent implements OnInit {
-  private deliveries = [];
-  private drivers = [];
-  private products = [];
+  public deliveries = [];
+  public drivers = [];
+  public products = [];
 
   constructor(private provider: DeliveryProvider, public dialog: MatDialog){}
 

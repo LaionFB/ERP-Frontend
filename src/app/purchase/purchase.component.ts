@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PurchaseProvider } from './purchase.provider';
 import { MatDialog } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 import { PurchaseOrderDialogComponent } from './dialogs/purchase-order/purchase-order.component';
 import { ProductDialogComponent } from './dialogs/product/product.component';
 import { QuotationDialogComponent } from './dialogs/quotation/quotation.component';
@@ -20,7 +21,7 @@ export class PurchaseComponent implements OnInit {
   public providers = [];
   public products = [];
 
-  constructor(private provider: PurchaseProvider, public dialog: MatDialog){}
+  constructor(private provider: PurchaseProvider, private dialog: MatDialog, private toastr: ToastrService){}
   
   ngOnInit(){
     this.purchaseOrders = this.provider.getPurchaseOrders();
@@ -38,9 +39,9 @@ export class PurchaseComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -55,9 +56,9 @@ export class PurchaseComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -72,9 +73,9 @@ export class PurchaseComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -89,9 +90,9 @@ export class PurchaseComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -106,9 +107,9 @@ export class PurchaseComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }

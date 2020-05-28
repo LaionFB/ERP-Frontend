@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeliveryProvider } from './delivery.provider';
 import { MatDialog } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 import { DriverDialogComponent } from './dialogs/driver/driver.component';
 import { DeliveryDialogComponent } from './dialogs/delivery/delivery.component';
 import { ProductDialogComponent } from './dialogs/product/product.component';
@@ -16,7 +17,7 @@ export class DeliveryComponent implements OnInit {
   public drivers = [];
   public products = [];
 
-  constructor(private provider: DeliveryProvider, public dialog: MatDialog){}
+  constructor(private provider: DeliveryProvider, private dialog: MatDialog, private toastr: ToastrService){}
 
   ngOnInit(){
     this.deliveries = this.provider.getDeliveries();
@@ -32,9 +33,9 @@ export class DeliveryComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -49,9 +50,9 @@ export class DeliveryComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -66,9 +67,9 @@ export class DeliveryComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }

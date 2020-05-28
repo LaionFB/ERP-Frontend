@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SalesProvider } from './sales.provider';
 import { MatDialog } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 import { SaleOrderDialogComponent } from './dialogs/sale-order/sale-order.component';
 import { ProductDialogComponent } from './dialogs/product/product.component';
 import { QuotationDialogComponent } from './dialogs/quotation/quotation.component';
@@ -20,7 +21,7 @@ export class SalesComponent implements OnInit{
   public customerServices = [];
   public products = [];
 
-  constructor(private provider: SalesProvider, public dialog: MatDialog){}
+  constructor(private provider: SalesProvider, private dialog: MatDialog, private toastr: ToastrService){}
 
   ngOnInit(){
     this.saleRequests = this.provider.getSaleRequests();
@@ -38,9 +39,9 @@ export class SalesComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -55,9 +56,9 @@ export class SalesComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -72,9 +73,9 @@ export class SalesComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -89,9 +90,9 @@ export class SalesComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -106,9 +107,9 @@ export class SalesComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }

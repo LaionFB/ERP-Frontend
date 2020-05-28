@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InventoryProvider } from './inventory.provider';
 import { MatDialog } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 import { PurchaseOrderDialogComponent } from './dialogs/purchase-order/purchase-order.component';
 import { SaleOrderDialogComponent } from './dialogs/sale-order/sale-order.component';
 import { ProductDialogComponent } from './dialogs/product/product.component';
@@ -16,7 +17,7 @@ export class InventoryComponent implements OnInit {
   public products = [];
   public purchaseOrders = [];
 
-  constructor(private provider: InventoryProvider, public dialog: MatDialog){}
+  constructor(private provider: InventoryProvider, private dialog: MatDialog, private toastr: ToastrService){}
 
   ngOnInit(){
     this.saleOrders = this.provider.getSaleOrders();
@@ -32,9 +33,9 @@ export class InventoryComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -49,9 +50,9 @@ export class InventoryComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }
@@ -66,9 +67,9 @@ export class InventoryComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         try{
-          //...
-          console.log('salvou', result)
+          this.toastr.success('Salvo com sucesso!');
         } catch(e){
+          this.toastr.error('Erro ao salvar!');
           console.error('erro', e)
         }
       }

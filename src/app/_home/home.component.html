@@ -1,0 +1,4 @@
+<mat-card *ngFor="let route of routes" [routerLink]="route.href">
+  <mat-icon color="accent">{{ route.icon }}</mat-icon>
+  <mat-card-title>{{ route.text }}</mat-card-title>
+</mat-card>

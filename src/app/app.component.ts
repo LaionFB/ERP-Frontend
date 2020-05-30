@@ -20,7 +20,7 @@ export class AppComponent{
   constructor(location: Location, router: Router) {
     router.events.subscribe(val => {
       if(location.path())
-        this.currentRoute = this.routes.find(x => x.href == location.path())['text'];
+        this.currentRoute = (this.routes.find(x => x.href == location.path()) || {})['text'];
     });
   }
 }

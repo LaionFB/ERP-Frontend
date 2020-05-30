@@ -23,11 +23,11 @@ export class PurchaseComponent implements OnInit {
 
   constructor(private provider: PurchaseProvider, private dialog: MatDialog, private toastr: ToastrService){}
   
-  ngOnInit(){
+  async ngOnInit(){
     this.purchaseOrders = this.provider.getPurchaseOrders();
     this.quotations = this.provider.getQuotations();
     this.purchases = this.provider.getPurchases();
-    this.providers = this.provider.getProviders();
+    this.providers = await this.provider.getProviders();
     this.products = this.provider.getProducts();
   }  
 

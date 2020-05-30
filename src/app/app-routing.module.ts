@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: 'delivery', loadChildren: 'src/app/delivery/delivery.module#DeliveryModule' },
   { path: 'inventory', loadChildren: 'src/app/inventory/inventory.module#InventoryModule' },
   { path: 'purchase', loadChildren: 'src/app/purchase/purchase.module#PurchaseModule' },
-  { path: 'sales', loadChildren: 'src/app/sales/sales.module#SalesModule' }
+  { path: 'sales', loadChildren: 'src/app/sales/sales.module#SalesModule' },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

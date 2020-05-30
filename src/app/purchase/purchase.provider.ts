@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PurchaseProvider {
+  private baseUrl = '';
   constructor(private http: HttpClient){
-    http.get('http://localhost:3000/hello-world')
-    .toPromise()
-    .then(x => console.log('result', x))
-    .catch(e => console.error(e))
+    this.baseUrl = environment.production ? 'http://localhost:3000' : 'http://localhost:3030';
   }
 
   getPurchaseOrders(){
@@ -24,8 +23,9 @@ export class PurchaseProvider {
     return this.purchases;
   }
 
-  getProviders(){
-    return this.providers;
+  getProviders(): Promise<any[]>{
+    return this.http.get(this.baseUrl + '/provider/get-all')
+    .toPromise() as Promise<any[]>;
   }
 
   getProducts(){

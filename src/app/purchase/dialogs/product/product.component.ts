@@ -11,6 +11,9 @@ export class ProductDialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<ProductDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    if(!this.data){
+      this.data = {};
+    }
   }
 
   save(){

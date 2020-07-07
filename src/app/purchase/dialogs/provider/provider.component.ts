@@ -11,6 +11,9 @@ export class ProviderDialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<ProviderDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    if(!this.data){
+      this.data = {};
+    }
   }
 
   save(){

@@ -1,3 +1,37 @@
-<p>//TODO: implementar</p>
-<p>data: {{ data | json }}</p>
+<h4>Cotação {{ data.id }}</h4>
+
+<mat-form-field appearance="fill" *ngIf="editMode">
+  <mat-label>Preço</mat-label>
+  <input matInput type="number" [(ngModel)]="data.price">
+</mat-form-field>
+
+<br/>
+
+<mat-form-field appearance="fill" *ngIf="editMode">
+  <mat-label>Situação</mat-label>
+  <mat-select [(ngModel)]="data.quotationSituationId">
+    <mat-option *ngFor="let situation of situationsList" [value]="situation.id">{{ situation.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br/>
+
+<mat-form-field appearance="fill" *ngIf="!editMode">
+  <mat-label>Ordem de Compras</mat-label>
+  <mat-select [(ngModel)]="data.purchaseOrderId">
+    <mat-option *ngFor="let purchaseOrder of purchaseOrdersList" [value]="purchaseOrder.id">{{ purchaseOrder.id }} ({{ purchaseOrder.product.name }})</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br/>
+
+<mat-form-field appearance="fill" *ngIf="!editMode">
+  <mat-label>Fornecedor</mat-label>
+  <mat-select [(ngModel)]="data.providerId">
+    <mat-option *ngFor="let provider of providersList" [value]="provider.id">{{ provider.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br/>
+
 <button mat-button color="primary" (click)="save()" class="dialog-save-button">Salvar</button>

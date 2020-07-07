@@ -1,3 +1,28 @@
-<p>//TODO: implementar</p>
-<p>data: {{ data | json }}</p>
+<h4>Compra {{ data.id }}</h4>
+
+<mat-form-field appearance="fill" *ngIf="editMode">
+  <mat-label>Situação</mat-label>
+  <mat-select [(ngModel)]="data.purchaseSituationId">
+    <mat-option *ngFor="let situation of situationsList" [value]="situation.id">{{ situation.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br/>
+
+<mat-form-field appearance="fill" *ngIf="!editMode">
+  <mat-label>Cotação</mat-label>
+  <mat-select [(ngModel)]="data.quotationId">
+    <mat-option *ngFor="let quotation of quotationsList" [value]="quotation.id">{{ quotation.id }} ({{ quotation.product.name }} / {{ quotation.provider.name }})</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br/>
+  
+<mat-form-field appearance="fill" *ngIf="!editMode">
+  <mat-label>Data de entrega</mat-label>
+  <input matInput type="date" [(ngModel)]="data.expectedDeliveryDate">
+</mat-form-field>
+
+<br/>
+
 <button mat-button color="primary" (click)="save()" class="dialog-save-button">Salvar</button>

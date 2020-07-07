@@ -1,3 +1,17 @@
-<p>//TODO: implementar</p>
-<p>data: {{ data | json }}</p>
+<h4>Produto {{ data.id }}</h4>
+
+<mat-form-field appearance="fill">
+  <mat-label>Nome</mat-label>
+  <input matInput type="text" [(ngModel)]="data.name">
+</mat-form-field>
+
+<br/>
+
+<mat-form-field appearance="fill">
+  <mat-label>Preço</mat-label>
+  <input matInput type="number" [(ngModel)]="data.price">
+</mat-form-field>
+  
+<br/>
+
 <button mat-button color="primary" (click)="save()" class="dialog-save-button">Salvar</button>

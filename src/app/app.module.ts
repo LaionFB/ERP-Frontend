@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -15,6 +16,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { HomeComponent } from './_home/home.component';
 import { DeliveryDialogComponent } from './delivery/dialogs/delivery/delivery.component';
@@ -57,6 +61,7 @@ import { SaleOrderDialogComponent as SaleOrderDialogComponent2 } from './sales/d
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -68,7 +73,10 @@ import { SaleOrderDialogComponent as SaleOrderDialogComponent2 } from './sales/d
     MatCardModule,
     MatTabsModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   bootstrap: [
     AppComponent
